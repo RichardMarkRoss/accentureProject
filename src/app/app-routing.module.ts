@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { StartComponent } from './start/start.component';
 import { SecondComponent } from './second/second.component';
 const routes: Routes = [
-  {path: '', component: StartComponent},
-  {path: 'second', component: SecondComponent}
+  {path: 'second', component: StartComponent},
+  {path: '', component: SecondComponent}
 ];
 
 @NgModule({
