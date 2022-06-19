@@ -1,20 +1,16 @@
 <div class="wrapper">
     <div class="carousel owl-carousel">
-        <div class="card card-1">A</div>
-        <div class="card card-2">B</div>
-        <div class="card card-3">C</div>
-        <div class="card card-4">D</div>
-        <div class="card card-5">E</div>
+        <div class="card card-1">Mobile Internet</div>
+        <div class="card card-2">Home Internet</div>
+        <div class="card card-3" active>Get Device</div>
+        <div class="card card-4">Add a phone line</div>
+        <div class="card card-5">Upgrade</div>
     </div>
-
 </div>
-
 
 <script>
     $(".carousel").owlCarousel({
-        margin: 10,
         center: true,
-        autoplayHoverPause: true,
         responsiveClass: true,
         responsive: {
             0: {
@@ -25,10 +21,9 @@
                 item: 3,
                 nav: true
             },
-            1400: {
+            1200: {
                 item: 5,
                 nav: true,
-                loop: true
             }
         }
     });
