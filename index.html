@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AccentureProject</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+<style>
+    span {
+        text-align: center;
+        line-height: 250px;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: broder-box;
+        font-family: 'poppin', sans-serif;
+    }
+    
+    body {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .wrapper {
+        width: 100%;
+    }
+    
+    .wrapper .carousel {
+        width: 100%;
+        height: 50%;
+    }
+    
+    .carousel .card {
+        width: 130px;
+        line-height: 200px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        margin: 100px 60px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .carousel .card-1 {
+        background: red;
+    }
+    
+    .carousel .card-2 {
+        background: rgb(4, 254, 21);
+    }
+    
+    .carousel .card-3 {
+        background: rgb(17, 0, 255);
+    }
+    
+    .carousel .card-4 {
+        background: rgb(251, 0, 255);
+    }
+    
+    .carousel .card-5 {
+        background: rgb(255, 247, 0);
+    }
+    
+    .active.center {
+        -webkit-transform: scale(1.8);
+        transform: scale(1.8);
+    }
+    
+    @media screen and (max-width: 768px) {
+        body {
+            background-color: blue;
+        }
+        .active.center {
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        body {
+            background-color: olive;
+        }
+        .active.center {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="carousel owl-carousel">
+            <div class="card card-1">Mobile Internet</div>
+            <div class="card card-2">Home Internet</div>
+            <div class="card card-3" active>Get Device</div>
+            <div class="card card-4">Add a phone</div>
+            <div class="card card-5">Upgrade</div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(".carousel").owlCarousel({
+            loop: true,
+            autoplay: true,
+            margin: 10,
+            center: true,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: true
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
