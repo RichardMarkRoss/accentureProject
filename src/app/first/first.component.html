@@ -7,23 +7,28 @@
         <div class="card card-5">Upgrade</div>
     </div>
 </div>
-
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+<script type="text/javascript">
     $(".carousel").owlCarousel({
+        loop: true,
+        autoplay: false,
+        margin: 10,
         center: true,
         responsiveClass: true,
         responsive: {
             0: {
-                item: 1,
+                items: 1,
                 nav: true
             },
             600: {
-                item: 3,
-                nav: true
+                items: 3,
+                nav: false
             },
-            1200: {
-                item: 5,
+            1000: {
+                items: 5,
                 nav: true,
+                loop: true
             }
         }
     });
