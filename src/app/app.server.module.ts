@@ -4,9 +4,8 @@ import { ServerModule } from '@angular/platform-server';
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
-import { AppShellComponent } from './app-shell/app-shell.component';
 
-const routes: Routes = [ { path: 'shell', component: AppShellComponent }];
+const routes: Routes = [];
 
 @NgModule({
   imports: [
@@ -15,8 +14,6 @@ const routes: Routes = [ { path: 'shell', component: AppShellComponent }];
     RouterModule.forRoot(routes),
   ],
   bootstrap: [AppComponent],
-  declarations: [
-    AppShellComponent
-  ],
+  declarations: [],
 })
 export class AppServerModule {}
