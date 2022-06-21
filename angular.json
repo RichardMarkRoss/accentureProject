@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/accentureProject/browser",
+                        "outputPath": "docs",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -96,46 +96,44 @@
                     }
                 },
                 "server": {
-                  "builder": "@angular-devkit/build-angular:server",
-                  "options": {
-                    "outputPath": "dist/accentureProject/server",
-                    "main": "src/main.server.ts",
-                    "tsConfig": "tsconfig.server.json"
-                  },
-                  "configurations": {
-                    "production": {
-                      "outputHashing": "media",
-                      "fileReplacements": [
-                        {
-                          "replace": "src/environments/environment.ts",
-                          "with": "src/environments/environment.prod.ts"
-                        }
-                      ]
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/accentureProject/server",
+                        "main": "src/main.server.ts",
+                        "tsConfig": "tsconfig.server.json"
                     },
-                    "development": {
-                      "optimization": false,
-                      "sourceMap": true,
-                      "extractLicenses": false
-                    }
-                  },
-                  "defaultConfiguration": "production"
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.prod.ts"
+                            }]
+                        },
+                        "development": {
+                            "optimization": false,
+                            "sourceMap": true,
+                            "extractLicenses": false
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 },
                 "app-shell": {
-                  "builder": "@angular-devkit/build-angular:app-shell",
-                  "options": {
-                    "route": "shell"
-                  },
-                  "configurations": {
-                    "production": {
-                      "browserTarget": "accentureProject:build:production",
-                      "serverTarget": "accentureProject:server:production"
+                    "builder": "@angular-devkit/build-angular:app-shell",
+                    "options": {
+                        "route": "shell"
                     },
-                    "development": {
-                      "browserTarget": "accentureProject:build:development",
-                      "serverTarget": "accentureProject:server:development"
-                    }
-                  },
-                  "defaultConfiguration": "production"
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "accentureProject:build:production",
+                            "serverTarget": "accentureProject:server:production"
+                        },
+                        "development": {
+                            "browserTarget": "accentureProject:build:development",
+                            "serverTarget": "accentureProject:server:development"
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 }
             }
         }
