@@ -1,38 +1,36 @@
-<div class="wrapper">
-    <div class="carousel owl-carousel">
-        <div class="card card-1">Mobile Internet</div>
-        <div class="card card-2">Home Internet</div>
-        <div class="card card-3" active>Get Device</div>
-        <div class="card card-4">Add a phone</div>
-        <div class="card card-5">Upgrade</div>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/angular-owl-carousel2@1.0.6/src/angular-owl-carousel-2.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    $(".carousel").owlCarousel({
-        loop: true,
-        autoplay: true,
-        margin: 10,
-        center: true,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true
-            },
-            600: {
-                items: 3,
-                nav: false
-            },
-            1000: {
-                items: 5,
-                nav: true,
-                loop: true
-            }
-        }
-    });
-</script>
+<owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of slides">
+        <ng-template carouselSlide>
+            <div class="card card-1">
+                <!-- <img src="https://dummyimage.com/350x150/423b42/fff" alt="Mobile Internet">  -->
+                Mobile Internet
+            </div>
+        </ng-template>
+        <ng-template carouselSlide id=2>
+            <div class="card card-2">
+                <!-- <img src="https://dummyimage.com/350x150/423b42/fff" alt="Home Internet">  -->
+                Home Internet
+            </div>
+        </ng-template>
+        <ng-template carouselSlide id=3>
+            <div class="card card-3">
+                <!-- <img src="https://dummyimage.com/350x150/423b42/fff" alt="Home Internet">  -->
+                Get Device
+            </div>
+        </ng-template>
+        <ng-template carouselSlide id=4>
+            <div class="card card-4">
+                <!-- <img src="https://dummyimage.com/350x150/423b42/fff" alt="Add a phone"> -->
+                Add a phone
+            </div>
+        </ng-template>
+        <ng-template carouselSlide id=5>
+            <div class="card card-5">
+                <!-- <img src="https://dummyimage.com/350x150/423b42/fff" alt="Mumbai Metro"> -->
+                Upgrade
+            </div>
+        </ng-template>
+    </ng-container>
+</owl-carousel-o>
 
 <router-outlet></router-outlet>

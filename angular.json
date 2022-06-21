@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/accenture-project",
+                        "outputPath": "dist/accentureProject/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -23,15 +23,11 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.css",
-                            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+                            "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+                            "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
                         ],
                         "scripts": [
-                            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
-                            "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js",
-                            "https://cdn.jsdelivr.net/npm/angular-owl-carousel2@1.0.6/src/angular-owl-carousel-2.min.js",
-                            "https://code.jquery.com/jquery-3.6.0.min.js",
-                            "../node_modules/jquery/dist/jquery.js"
+                            "./node_modules/jquery/dist/jquery.min.js"
                         ]
                     },
                     "configurations": {
@@ -98,6 +94,48 @@
                         ],
                         "scripts": []
                     }
+                },
+                "server": {
+                  "builder": "@angular-devkit/build-angular:server",
+                  "options": {
+                    "outputPath": "dist/accentureProject/server",
+                    "main": "src/main.server.ts",
+                    "tsConfig": "tsconfig.server.json"
+                  },
+                  "configurations": {
+                    "production": {
+                      "outputHashing": "media",
+                      "fileReplacements": [
+                        {
+                          "replace": "src/environments/environment.ts",
+                          "with": "src/environments/environment.prod.ts"
+                        }
+                      ]
+                    },
+                    "development": {
+                      "optimization": false,
+                      "sourceMap": true,
+                      "extractLicenses": false
+                    }
+                  },
+                  "defaultConfiguration": "production"
+                },
+                "app-shell": {
+                  "builder": "@angular-devkit/build-angular:app-shell",
+                  "options": {
+                    "route": "shell"
+                  },
+                  "configurations": {
+                    "production": {
+                      "browserTarget": "accentureProject:build:production",
+                      "serverTarget": "accentureProject:server:production"
+                    },
+                    "development": {
+                      "browserTarget": "accentureProject:build:development",
+                      "serverTarget": "accentureProject:server:development"
+                    }
+                  },
+                  "defaultConfiguration": "production"
                 }
             }
         }
